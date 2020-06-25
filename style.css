@@ -34,11 +34,49 @@ h5 {
     color: hsl(240, 18%, 77%);
 }
 
+.flip-scale-up-hor {
+    -webkit-animation: animationFrames 1s linear;
+    animation: animationFrames 1s linear;
+}
+
+
+/* ------------------------------------ */
+
+@keyframes animationFrames {
+    0% {
+        opacity: 0;
+        transform: translate(300px, 0px) skewX(-30deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate(-40px, 0px) skewX(30deg);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(-500px, 0px) skewX(-15deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: skewX(0deg);
+    }
+}
+
+
+
 .tanya {
     padding: 25px;
     justify-content: center;
     padding-top: 150px;
     margin-left: -150px;
+    opacity: 1;
+    /* -webkit-animation: fadein 5s; Safari, Chrome and Opera > 12.1
+       -moz-animation: fadein 5s; /* Firefox < 16 */
+    /* -ms-animation: fadein 5s; /* Internet Explorer */
+    /* -o-animation: fadein 5s; Opera < 12.1 */
+    /* animation: fadein 5s;  */
 }
 
 .John {
@@ -147,6 +185,7 @@ div p::before {
 }
 
 
+
 @media (max-width:768px) {
 
     body {
@@ -222,15 +261,16 @@ div p::before {
         width: 252px;
         position: relative;
         top: -217px;
-        left: -9px;    
+        left: -9px;
         height: 370px;
     }
 
     .slider-nav {
 
         left: -80px;
- 
+
     }
+
     div p::before {
         content: url(/images/pattern-quotes.svg);
         position: fixed;
